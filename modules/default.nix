@@ -24,6 +24,28 @@
     ripgrep
   ];
 
+  home.file."justfile" = # justfile
+    ''
+      nixos-repo := "github:ModestMeowth/nixos"
+      home-manager-repo := "github:ModestMeowth/home-manager"
+      default:
+        just --justfile "{{justfile()}}"
+
+      update: nixos-switch home-manager-switch
+
+      nixos-build:
+        nh os build "{{nixos-repo}}" -- --refresh
+
+      nixos-switch:
+        nh os switch "{{nixos-repo}}" -- --refresh
+
+      home-manager-build:
+        nh home build "{{home-manager-repo}}" -- --refresh
+
+      home-manager-switch:
+        nh home switch "{{home-manager-repo}}" -- --refresh
+    '';
+
   programs = {
     bat = {
       enable = true;
