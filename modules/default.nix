@@ -24,14 +24,20 @@
     ripgrep
   ];
 
-  home.file."justfile" = # justfile
+  home.file."justfile".enable = true;
+  home.file."justfile".text = # justfile
     ''
       nixos-repo := "github:ModestMeowth/nixos"
       home-manager-repo := "github:ModestMeowth/home-manager"
+
+      alias update := switch
+
       default:
         just --justfile "{{justfile()}}"
 
-      update: nixos-switch home-manager-switch
+      build: nixos-build home-manager-build
+
+      switch: nixos-switch home-manager-switch
 
       nixos-build:
         nh os build "{{nixos-repo}}" -- --refresh
