@@ -27,6 +27,20 @@
       performance.maxViewEntries = 30;
       window.completion.border = "solid";
       window.documentation.border = "solid";
+
+      mapping.__raw = # lua
+        ''
+          cmp.mapping.preset.insert({
+            ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+            ["<C-d>"] = cmp.mapping.scroll_docs(4),
+            ["<C-e>"] = cmp.mapping.close(),
+            ["<CR>"] = cmp.mapping.confirm {
+              behavior = cmp.ConfirmBehavior.Insert,
+              select = false,
+            },
+          })
+        '';
+
       snippet.expand = # lua
         ''
           function(args)
