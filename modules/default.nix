@@ -33,7 +33,7 @@
       alias update := switch
 
       default:
-        just --justfile "{{justfile()}}"
+        just --choose --justfile "{{justfile()}}"
 
       build: nixos-build home-manager-build
 
