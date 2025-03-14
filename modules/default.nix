@@ -71,10 +71,15 @@
       nix-direnv.enable = true;
     };
 
-    eza.enable = true;
+    eza = {
+      enable = true;
+      enableBashIntegration = false;
+      enableFishIntegration = false;
+      enableZshIntegration = false;
+    };
+
     fd = {
       enable = true;
-      hidden = true;
       ignores = [ ".git/*" "*.bak" ];
     };
     fish.enable = true;

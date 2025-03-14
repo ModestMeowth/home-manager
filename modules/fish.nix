@@ -48,6 +48,8 @@
 
       cd = "z";
       ci = "zi";
+
+      fd = "fd --hidden";
     };
   };
 }
