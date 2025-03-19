@@ -4,10 +4,6 @@ let
 in
 {
   dconf.settings = {
-    "org/gnome/shell/extensions/user-theme".name = "Dracula";
-
-    "org/gnome/shell".disable-user-extensions = false;
-
     "org/gnome/desktop/applications/terminal".exec = lib.mkDefault "kgx";
 
     "org/gnome/desktop/background" = {
@@ -54,7 +50,7 @@ in
       panel-run-dialog = [ "<Super>space" ];
       close = [ "<Shift><Super>q" ];
       toggle-fullscreen = [ ];
-      minimize = [ "<Super>h" ];
+      minimize = [ ];
       maximize = [ ];
       unmaximize = [ ];
       toggle-maximized = [ "<Super>f" ];
@@ -66,8 +62,8 @@ in
       move-to-monitor-left = [ ];
       move-to-monitor-right = [ ];
       move-to-monitor-up = [ ];
-      move-to-workspace-left = [ ];
-      move-to-workspace-right = [ ];
+      move-to-workspace-left = [ "<Shift><Super>h" ];
+      move-to-workspace-right = [ "<Shift><Super>l" ];
       move-to-workspace-last = [ ];
       move-to-workspace-1 = [ "<Shift><Super>1" ];
       move-to-workspace-2 = [ "<Shift><Super>2" ];
