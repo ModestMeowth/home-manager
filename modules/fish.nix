@@ -27,6 +27,9 @@
       ''
         set -g fish_greeting
         fish_vi_key_bindings
+        bind yy fish_clipboard_copy
+        bind Y fish_clipboard_copy
+        bind p fish_clipboard_paste
 
         set fzf_preview_dir_cmd eza --always --color=always
         set -x FZF_DEFAULT_OPTS --color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9,fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9,info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6,marker:#ff79c6,spinner:#ffb86c,header:#6272a4 --cycle --layout=reverse --border --height=90% --preview-window=wrap --marker=*
