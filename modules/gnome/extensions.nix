@@ -18,7 +18,7 @@
     "org/gnome/shell/extensions/user-theme".name = "Dracula";
 
     "org/gnome/shell/extensions/tilingshell" = {
-      show-indicator = false;
+      show-indicator = true;
       enable-autotiling = true;
       enable-snap-assist = true;
 
