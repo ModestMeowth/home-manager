@@ -29,6 +29,73 @@
       move-window-left = ["<Super>h"];
       move-window-right = ["<Super>l"];
       move-window-up = ["<Super>k"];
+
+      layouts-json = builtins.toJSON [
+          {
+            id = "40:60";
+            tiles = [
+              {
+                x = 0;
+                y = 0;
+                width = 0.4;
+                height = 1;
+                groups = [1];
+              }
+              {
+                x = 0.4;
+                y = 0;
+                width = 0.6;
+                height = 1;
+                groups = [1];
+              }
+            ];
+          }
+          {
+            id = "60:40";
+            tiles = [
+              {
+                x = 0;
+                y = 0;
+                width = 0.6;
+                height = 1;
+                groups = [1];
+              }
+              {
+                x = 0.6;
+                y = 0;
+                width = 0.4;
+                height = 1;
+                groups = [1];
+              }
+            ];
+          }
+          {
+            id = "50:50";
+            tiles = [
+              {
+                x = 0;
+                y = 0;
+                width = 0.5;
+                height = 1;
+                groups = [1];
+              }
+              {
+                x = 0.5;
+                y = 0;
+                width = 0.5;
+                height = 1;
+                groups = [1];
+              }
+            ];
+          }
+        ];
+
+      selected-layouts = [
+        ["40:60"]
+        ["60:40"]
+        ["50:50"]
+        ["50:50"]
+      ];
     };
   };
 }
