@@ -5,6 +5,7 @@
     "zellij/config.kdl".text = # kdl
       ''
         copy_command: "wl-copy"
+        support_kitty_keyboard_protocol false
         default_mode "normal"
         theme "dracula"
 
