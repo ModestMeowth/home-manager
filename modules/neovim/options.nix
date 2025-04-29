@@ -1,5 +1,8 @@
 {
   programs.nixvim = {
+    diagnostic.config = {
+    };
+
     globals.mapleader = " ";
 
     opts = {
@@ -36,7 +39,7 @@
       smarttab = true;
 
       undofile = true;
-      undodir.__raw = ''vim.fn.stdpath("data") .. "/undodir"'';
+      undodir.__raw = /* lua */ ''vim.fn.stdpath("data") .. "/undodir"'';
     };
   };
 }

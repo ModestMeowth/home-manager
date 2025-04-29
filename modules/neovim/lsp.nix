@@ -67,6 +67,7 @@
       ];
     };
 
+
     lsp.servers = {
       bashls.enable = true;
       clangd.enable = true;

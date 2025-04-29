@@ -163,7 +163,7 @@
       "inputs": {
         "flake-parts": "flake-parts",
         "nixpkgs": [
-          "unstable"
+          "nixpkgs"
         ],
         "nuschtosSearch": "nuschtosSearch"
       },
@@ -188,11 +188,19 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1745899777,
         "narHash": "sha256-GXtCV4+3+ZngD02MSp6gkkWlbEvTgu85A6VQxb7je4Y=",
         "owner": "nix-community",
         "repo": "NUR",
         "rev": "fc9528d7e8d08b9f9ee183e1138172d1d146b8f3",
+=======
+        "lastModified": 1745885754,
+        "narHash": "sha256-rHJIi16i1OrSYTTXnuZ8fBbfAuhSxv/BcELVy4Tly/g=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "0dfb3f8c58d63e6f4f1b59f43d8087a8b15a88c9",
+>>>>>>> bfe27b2 (fix nixvim stuff)
         "type": "github"
       },
       "original": {
