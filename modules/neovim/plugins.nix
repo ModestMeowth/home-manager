@@ -6,6 +6,7 @@
     image.enable = true;
     render-markdown.enable = true;
     markdown-preview.enable = true;
+    spider.enable = true;
     telescope.enable = true;
     treesitter.enable = true;
     trouble.enable = true;
