@@ -42,6 +42,13 @@
 
     markdown-preview.settings.theme = "dark";
 
+    spider.keymaps.motions = {
+      b = "b";
+      e = "e";
+      ge = "ge";
+      w = "w";
+    };
+
     telescope.extensions = {
       fzf-native.enable = true;
     };

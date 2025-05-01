@@ -1,6 +1,8 @@
 {
   programs.nixvim = {
     diagnostic.config = {
+      virtual_lines.current_line = false;
+      virtual_text = false;
     };
 
     globals.mapleader = " ";
