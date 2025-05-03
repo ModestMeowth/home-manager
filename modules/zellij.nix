@@ -9,6 +9,11 @@
         default_mode "normal"
         theme "dracula"
 
+        keybinds {
+          unbind "Ctrl t" // interferes with fzf
+          tab clear-defaults=true {}
+        }
+
         plugins {
           tab-bar {
             path "tab-bar"

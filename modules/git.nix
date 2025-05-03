@@ -1,4 +1,11 @@
 {
+  home.shellAliases = {
+    g = "git";
+    ga = "git add";
+    clone = "git clone";
+    co = "git switch";
+  };
+
   programs.git = {
     enable = true;
 

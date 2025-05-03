@@ -3,13 +3,20 @@
     ./chromium.nix
     ./editorconfig.nix
     ./firefox.nix
-    ./fish.nix
     ./ghostty.nix
     ./git.nix
     ./neovim
+    ./shell.nix
     ./starship.nix
     ./virt-manager.nix
+
+    ./tmux.nix
     ./zellij.nix
+
+    ./bash.nix
+    ./fish.nix
+    ./nushell.nix
+    ./zsh.nix
   ];
 
   home.username = "mm";
@@ -53,43 +60,9 @@
     '';
 
   programs = {
-    bat = {
-      enable = true;
-      extraPackages = with pkgs.bat-extras; [
-        batman
-        batdiff
-        prettybat
-      ];
-
-      config = {
-        theme = "Dracula";
-      };
-    };
-
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
-
-    eza = {
-      enable = true;
-      enableBashIntegration = false;
-      enableFishIntegration = false;
-      enableZshIntegration = false;
-    };
-
-    fd = {
-      enable = true;
-      ignores = [ ".git/*" "*.bak" ];
-    };
+    bash.enable = true;
     fish.enable = true;
-    fzf.enable = true;
-    gh.enable = true;
-    home-manager.enable = true;
-    man.generateCaches = true;
-    starship.enable = true;
-    zellij.enable = true;
-    zoxide.enable = true;
+    nushell.enable = true;
   };
 
   systemd.user.startServices = "sd-switch";

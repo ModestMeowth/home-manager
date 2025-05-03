@@ -8,9 +8,12 @@
 
     installBatSyntax = true;
 
-    settings.theme = "Dracula";
-    settings.keybind = [
-      "clear"
-    ];
+    settings = {
+      font-family = "UbuntuMono Nerd Font";
+      keybind = [
+        "clear"
+      ];
+      theme = "Dracula";
+    };
   };
 }

@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     bitwarden-cli
     bitwarden-desktop
-    lutris
     signal-desktop
     virt-manager
     xdg-utils
