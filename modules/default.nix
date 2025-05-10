@@ -25,7 +25,6 @@
 
   home.packages = with pkgs; [
     just
-    mosh
     ncdu
     nmap
     ripgrep
