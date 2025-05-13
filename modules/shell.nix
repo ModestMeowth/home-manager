@@ -1,5 +1,5 @@
-{ pkgs, ...}: {
-  home.shellAliases = {
+{ pkgs, ... }: {
+  shell.aliases = {
     ssh = "mosh";
     j = "just";
     cd = "__zoxide_z";

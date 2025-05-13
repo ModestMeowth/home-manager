@@ -1,5 +1,3 @@
 {
-  programs.zsh = {
-
-  };
+  programs.zsh = { };
 }

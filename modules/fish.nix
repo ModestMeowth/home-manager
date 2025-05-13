@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }: {
+{ config, lib, pkgs, ... }: {
   programs.fish = {
     plugins = with pkgs.fishPlugins; [
       {
@@ -16,6 +16,9 @@
     ];
 
     preferAbbrs = true;
+
+    # preferAbbrs doesn't do this for some reason...
+    shellAbbrs = config.home.shellAliases;
 
     shellInit = # fish
       ''
@@ -35,4 +38,5 @@
         set fzf_preview_dir_cmd exa --icons=auto --color=always;
       '';
   };
+  home.shellAliases = lib.mkForce {};
 }

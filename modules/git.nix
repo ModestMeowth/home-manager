@@ -37,4 +37,9 @@
       init.defaultBranch = "main";
     };
   };
+
+  programs.lazygit = {
+    enable = true;
+    settings.gui = {};
+  };
 }
