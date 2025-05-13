@@ -10,7 +10,6 @@
     lsp.enable = true;
     luasnip.enable = true;
     nix.enable = true;
-    otter.enable = true;
     schemastore.enable = true;
     schemastore.yaml.enable = true;
     schemastore.json.enable = true;

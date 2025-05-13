@@ -1,59 +1,5 @@
 {
-  programs.nixvim = {
-    plugins.lsp.keymaps.extra = [
-      {
-        mode = "n";
-        key = "gD";
-        action = # lua
-          "vim.lsp.buff.declaration";
-      }
-      {
-        mode = "n";
-        key = "gD";
-        action = # lua
-          "vim.lsp.buff.definition";
-      }
-      {
-        mode = "n";
-        key = "gi";
-        action = # lua
-          "vim.lsp.buff.implementation";
-      }
-      {
-        mode = "n";
-        key = "<leader>k";
-        action = # lua
-          "vim.lsp.buf.hover";
-      }
-      {
-        mode = "n";
-        key = "<C-k>";
-        action = # lua
-          "vim.lsp.buf.signature_help";
-      }
-      {
-        mode = "n";
-        key = "<leader>R";
-        action = # lua
-          "vim.lsp.buf.rename";
-      }
-      {
-        mode = [ "n" "v" ];
-        key = "<leader>a";
-        action = # lua
-          "vim.lsp.buf.code_action";
-      }
-      {
-        mode = "n";
-        key = "<leader>r";
-        action.__raw = # lua
-          ''
-            require("telescope.builtin").lsp_references
-          '';
-      }
-    ];
-
-    keymaps = [
+  programs.nixvim.keymaps = [
       {
         mode = "n";
         key = "Q";
@@ -95,133 +41,62 @@
         action = "v$";
       }
 
-      # LSP
+      # Snacks
       {
-        mode = "n";
-        key = "gD";
-        action = # lua
-          "vim.lsp.buf.declaration";
+        key = "<leader>ee";
+        action.__raw = "function() require\"snacks\".explorer() end";
+        options.desc = "File Explorer";
       }
       {
-        mode = "n";
-        key = "gd";
-        action = # lua
-          "vim.lsp.buf.definition";
-      }
-      {
-        mode = "n";
-        key = "gi";
-        action = # lua
-          "vim.lsp.buf.implementation";
-      }
-      {
-        mode = "n";
-        key = "<leader>k";
-        action = #lua
-          "vim.lsp.buf.hover";
-      }
-      {
-        mode = "n";
-        key = "<C-k>";
-        action = # lua
-          "vim.lsp.buf.signature_help";
-      }
-      {
-        mode = "n";
-        key = "<leader>R";
-        action = # lua
-          "vim.lsp.buf.rename";
-      }
-      {
-        mode = [ "n" "v" ];
-        key = "<leader>a";
-        action = # lua
-          "vim.lsp.buf.code_action";
-      }
-      {
-        mode = "n";
-        key = "<leader>r";
-        action.__raw = #lua
-          ''require("telescope.builtin").lsp_references'';
-      }
-
-      # Telescope
-      {
-        mode = "n";
         key = "<leader>pf";
-        action = "<cmd>Telescope find_files<CR>";
+        action.__raw = "function() require\"snacks\".picker.files() end";
+        options.desc = "Find Files";
       }
       {
-        mode = "n";
-        key = "<C-p>";
-        action = "<cmd>Telescope git_files<CR>";
+        key = "<leader>/";
+        action.__raw = "function() require\"snacks\".picker.grep() end";
+        options.desc = "Grep";
       }
       {
-        mode = "n";
-        key = "<leader>vh";
-        action = "<cmd>Telescope help_tags<CR>";
-      }
-
-      # Trouble
-      {
-        mode = "n";
-        key = "<leader>tt";
-        action.__raw = # lua
-          ''function() require("trouble").toggle() end'';
+        key = "<leader>pr";
+        action.__raw = "function() require\"snacks\".picker.registers() end";
+        options.desc = "Registers";
       }
       {
-        mode = "n";
-        key = "[t";
-        action.__raw = # lua
-          ''
-            function()
-              require("trouble").next({
-                skip_groups = true,
-                jump = true,
-              })
-            end
-          '';
+        key = "gd";
+        action.__raw = "function() require\"snacks\".picker.lsp_definitions() end";
+        options.desc = "Goto Definition";
       }
       {
-        mode = "n";
-        key = "]t";
-        action.__raw = # lua
-          ''
-            function()
-              require("trouble").previous({
-                skip_groups = true,
-                jump = true,
-              })
-            end
-          '';
+        key = "gD";
+        action.__raw = "function() require\"snacks\".picker.lsp_declarations() end";
+        options.desc = "Goto Declaration";
       }
       {
-        mode = "n";
-        key = "<leader>e";
-        action = # lua
-          ''
-            vim.diagnostic.open_float
-          '';
-      }
-
-      # Suda
-      {
-        mode = "c";
-        key = "r!!";
-        action = "<cmd>SudaRead %";
+        key = "gr";
+        action.__raw = "function() require\"snacks\".picker.lsp_references() end";
+        options.nowait = true;
+        options.desc = "References";
       }
       {
-        mode = "c";
-        key = "w!!";
-        action = "<cmd>SudaWrite %";
+        key = "gI";
+        action.__raw = "function() require\"snacks\".picker.lsp_implementation() end";
+        options.desc = "Goto Implementation";
       }
-
-      # Undotree
       {
-        mode = "n";
-        key = "<leader>u";
-        action = "<cmd>UndotreeToggle<CR>";
+        key = "gy";
+        action.__raw = "function() require\"snacks\".picker.lsp_type_definitions() end";
+        options.desc = "Goto T[y]pe Definition";
       }
-    ];
-  };
+      {
+        key = "<leader>ss";
+        action.__raw = "function() require\"snacks\".picker.lsp_symbols() end";
+        options.desc = "LSP Symbols";
+      }
+      {
+        key = "<leader>sS";
+        action.__raw = "function() require\"snacks\".picker.lsp_workspace_symbols() end";
+        options.desc = "LSP Workspaces Symbols";
+      }
+   ];
 }
