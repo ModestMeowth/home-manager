@@ -1,6 +1,14 @@
 {
   programs.nixvim.plugins = {
+    auto-save.enable = true;
+    otter.enable = true;
+    persistence.enable = true;
+    render-markdown.enable = true;
     snacks.enable = true;
+    todo-comments.enable = true;
+    treesitter.enable = true;
+    web-devicons.enable = true;
+
     snacks.settings = {
       dashboard.enabled = true;
       explorer.enabled = true;
@@ -10,24 +18,14 @@
       notifier.enabled = true;
       picker.enabled = true;
       scope.enabled = true;
-      statuscolumn = {
-        enabled = true;
-        left = ["mark" "sign"];
-        right = ["fold" "git"];
-        folds = {
-          open = false;
-          git_hl = false;
-        };
-        git.patterns = ["GitSign" "MiniDiffSign"];
-        refresh = 50;
-      };
+      statuscolumn.enabled = true;
+      toggle.enabled = true;
+      words.enabled = true;
+      zen.enabled = true;
     };
 
-    treesitter.enable = true;
     treesitter.settings = {
       highlight.enable = true;
     };
-
-    web-devicons.enable = true;
   };
 }

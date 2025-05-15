@@ -15,12 +15,6 @@
         }
 
         plugins {
-          autolock location="https://github.com/fresh2dev/zellij-autolock/releases/latest/download/zellij-autolock.wasm" {
-            triggers "nvim|vim|vi|v|nv"
-            watch_triggers "fzf|zoxide|atuin|atac"
-            watch_interval "1.0"
-          }
-
           tab-bar {
             path "tab-bar"
           }

@@ -24,8 +24,10 @@
         register = "unnamedplus";
       };
 
-      swapfile = false;
       backup = false;
+      swapfile = false;
+
+      wrap = false;
     };
   };
 }
