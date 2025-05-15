@@ -2,7 +2,7 @@
   shell.aliases = {
     ssh = "mosh";
     j = "just";
-    cd = "__zoxide_z";
+    z = "__zoxide_z";
     zi = "__zoxide_zi";
   };
 

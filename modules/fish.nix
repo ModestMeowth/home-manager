@@ -18,7 +18,10 @@
     preferAbbrs = true;
 
     # preferAbbrs doesn't do this for some reason...
-    shellAbbrs = config.home.shellAliases;
+    shellAbbrs = {
+      cd = "z";
+      ci = "zi";
+    } // config.home.shellAliases;
 
     shellInit = # fish
       ''
