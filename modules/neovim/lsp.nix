@@ -41,11 +41,7 @@
         '';
 
       snippet.expand = # lua
-        ''
-          function(args)
-            require('luasnip').lsp_expand(args.body)
-          end
-        '';
+        ''function(args) require"luasnip".lsp_expand(args.body) end'';
 
       sources = [
         {
@@ -78,6 +74,7 @@
         autostart = true;
       };
 
+      harper_ls.enable = true;
       html.enable = true;
       htmx.enable = true;
       jsonls.enable = true;
