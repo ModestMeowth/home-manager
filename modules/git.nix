@@ -40,6 +40,6 @@
 
   programs.lazygit = {
     enable = true;
-    settings.gui = {};
+    settings.gui = { };
   };
 }

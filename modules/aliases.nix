@@ -2,10 +2,11 @@
 let
   cfg = config.shell.aliases;
   preferAbbrs = config.programs.fish.preferAbbrs;
-in {
+in
+{
   options.shell.aliases = lib.mkOption {
     type = with lib.types; attrsOf str;
-    default = {};
+    default = { };
   };
 
   config = {

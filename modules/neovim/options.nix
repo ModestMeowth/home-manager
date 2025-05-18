@@ -24,10 +24,25 @@
         register = "unnamedplus";
       };
 
+      number = true;
+      relativenumber = true;
+      cursorline = true;
+      guicursor = "";
+      ruler = true;
+      scrolloff = 8;
+      sidescrolloff = 8;
+      wrap = false;
+
       backup = false;
       swapfile = false;
 
-      wrap = false;
+      ignorecase = true;
+      smartcase = true;
+      hlsearch = true;
+      incsearch = true;
+
+      undofile = true;
+      undodir.__raw = ''vim.fn.stdpath("data") .. "/undodir"'';
     };
   };
 }

@@ -41,5 +41,5 @@
         set fzf_preview_dir_cmd exa --icons=auto --color=always;
       '';
   };
-  home.shellAliases = lib.mkForce {};
+  home.shellAliases = lib.mkForce { };
 }
