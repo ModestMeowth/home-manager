@@ -34,7 +34,7 @@
   home.file."justfile".enable = true;
   home.file."justfile".text = # justfile
     ''
-      IS_MOSH := if env("FISH_PARENT") == ".mosh-server-wr" { "true" } else { "false" }
+      IS_MOSH := if env("PARENT_PROCESS", "false") == ".mosh-server-wr" { "true" } else { "false" }
       nixos-repo := "github:ModestMeowth/nixos"
       home-manager-repo := "github:ModestMeowth/home-manager"
 

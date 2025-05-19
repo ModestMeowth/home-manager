@@ -33,7 +33,7 @@
 
     interactiveShellInit = lib.mkBefore # fish
       ''
-        set -x FISH_PARENT (ps -h -o comm -p (ps -h -o ppid -p $fish_pid | tr -d " "))
+        set -x PARENT_PROCESS (ps -h -o comm -p (ps -h -o ppid -p $fish_pid | tr -d " "))
         set -g fish_greeting
         fish_vi_key_bindings
         bind yy fish_clipboard_copy

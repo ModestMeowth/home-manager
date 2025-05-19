@@ -1,4 +1,4 @@
-IS_MOSH := if env("FISH_PARENT") == ".mosh-server-wr" { "true" } else { "false" }
+IS_MOSH := if env("PARENT_PROCESS", "false") == ".mosh-server-wr" { "true" } else { "false" }
 
 default:
   just --choose --justfile "{{justfile()}}"
