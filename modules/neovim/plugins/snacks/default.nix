@@ -1,9 +1,12 @@
 {
+  imports = [
+    ./dashboard.nix
+  ];
+
   programs.nixvim.plugins.snacks = {
     enable = true;
 
     settings = {
-      dashboard.enabled = true;
       explorer.enabled = true;
       image.enabled = true;
       indent.enabled = true;
@@ -12,7 +15,6 @@
       picker.enabled = true;
       scope.enabled = true;
       statuscolumn.enabled = true;
-      toggle.enabled = true;
       words.enabled = true;
       zen.enabled = true;
     };
@@ -78,6 +80,18 @@
       key = "<leader>sS";
       action.__raw = ''function() require"snacks".picker.lsp_workspace_symbols() end'';
       options.desc = "LSP Workspaces Symbols";
+    }
+    {
+      key = "<leader>`";
+      action.__raw = ''function() require"snacks".terminal.toggle() end'';
+    }
+    {
+      key = "<leader>lg";
+      action.__raw = ''function() require"snacks".lazygit.open() end'';
+    }
+    {
+      key = "<leader>z";
+      action.__raw = ''function() require"snacks".toggle.zen() end'';
     }
   ];
 }

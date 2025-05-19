@@ -1,7 +1,7 @@
 {
   imports = [
     ./oil.nix
-    ./snacks.nix
+    ./snacks
     ./treesitter.nix
     ./treesitter-textobjects.nix
   ];
@@ -12,6 +12,7 @@
     persistence.enable = true;
     render-markdown.enable = true;
     todo-comments.enable = true;
+    trouble.enable = true;
     web-devicons.enable = true;
   };
 }

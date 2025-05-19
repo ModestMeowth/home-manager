@@ -5,14 +5,21 @@
     "zellij/config.kdl".text = # kdl
       ''
         copy_command: "wl-copy"
-        support_kitty_keyboard_protocol false
+        support_kitty_keyboard_protocol true
         default_mode "normal"
         theme "dracula"
 
         keybinds {
           unbind "Ctrl t" // interferes with fzf
           tab clear-defaults=true {}
+          tmux {
+            bind "\\" { NewPane "Right"; SwitchToMode "Normal"; }
+            bind "|" { NewPane "Right"; SwitchToMode "Normal"; }
+            bind "-" { NewPane "Down"; SwitchToMode "Normal"; }
+            bind "_" { NewPane "Down"; SwitchToMode "Normal"; }
+          }
         }
+
 
         plugins {
           tab-bar {
@@ -40,7 +47,7 @@
         layout {
           pane
           pane size=1 borderless=true {
-            plugin location="zellij:tab-bar"
+            plugin location="compact-bar"
           }
         }
       '';
