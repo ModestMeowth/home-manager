@@ -34,6 +34,7 @@
   home.file."justfile".enable = true;
   home.file."justfile".text = # justfile
     ''
+      IS_MOSH := if env("FISH_PARENT") == ".mosh-server-wr" { "true" } else { "false" }
       nixos-repo := "github:ModestMeowth/nixos"
       home-manager-repo := "github:ModestMeowth/home-manager"
 
@@ -47,16 +48,16 @@
       switch: nixos-switch home-manager-switch
 
       nixos-build:
-        nh os build "{{nixos-repo}}" -- --refresh
+        nh os build "{{nixos-repo}}" {{ if IS_MOSH == "true" { " --no-nom" } else { "" } }} -- --refresh
 
       nixos-switch:
-        nh os switch "{{nixos-repo}}" -- --refresh
+        nh os switch "{{nixos-repo}}" {{ if IS_MOSH == "true" { " --no-nom" } else { "" } }} -- --refresh
 
       home-manager-build:
-        nh home build "{{home-manager-repo}}" -- --refresh
+        nh home build "{{home-manager-repo}}" {{ if IS_MOSH == "true" { " --no-nom" } else { "" } }} -- --refresh
 
       home-manager-switch:
-        nh home switch "{{home-manager-repo}}" -- --refresh
+        nh home switch "{{home-manager-repo}}" {{ if IS_MOSH == "true" { " --no-nom" } else { "" } }} -- --refresh
     '';
 
   programs = {
