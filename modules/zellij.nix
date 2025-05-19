@@ -4,6 +4,7 @@
   xdg.configFile = {
     "zellij/config.kdl".text = # kdl
       ''
+        show_startup_tips false
         copy_command: "wl-copy"
         support_kitty_keyboard_protocol false
         default_mode "normal"

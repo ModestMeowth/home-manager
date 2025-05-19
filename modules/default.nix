@@ -22,7 +22,7 @@
 
   home.username = "mm";
   home.homeDirectory = "/home/mm";
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
     just

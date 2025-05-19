@@ -1,7 +1,5 @@
-{ pkgs, ... }: {
+{
   programs.ghostty = {
-    package = pkgs.unstable.ghostty;
-
     enableBashIntegration = true;
     enableFishIntegration = true;
     enableZshIntegration = true;

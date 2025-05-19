@@ -38,8 +38,8 @@
         enable = true;
         installCargo = true;
         installRustc = true;
-        cargoPackage = pkgs.unstable.cargo;
-        rustcPackage = pkgs.unstable.rustc;
+        cargoPackage = pkgs.cargo;
+        rustcPackage = pkgs.rustc;
       };
 
       tailwindcss.enable = true;

@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.11";
+    nixpkgs.url = "nixpkgs/nixos-25.05";
     unstable.url = "nixpkgs/nixos-unstable";
     nur.url = "flake:nur";
 
@@ -10,7 +10,7 @@
     };
 
     home-manager = {
-      url = "home-manager/release-24.11";
+      url = "home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
