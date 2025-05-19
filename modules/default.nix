@@ -43,9 +43,15 @@
       default:
         just --choose --justfile "{{justfile()}}"
 
+      boot:
+        nh os boot "{{nixos-repo}}" {{ if IS_MOSH == "true" { " --no-nom" } else { "" } }} -- --refresh
+
       build: nixos-build home-manager-build
 
       switch: nixos-switch home-manager-switch
+
+      test:
+        nh os test "{{nixos-repo}}" {{ if IS_MOSH == "true" { " --no-nom" } else { "" } }} -- --refresh
 
       nixos-build:
         nh os build "{{nixos-repo}}" {{ if IS_MOSH == "true" { " --no-nom" } else { "" } }} -- --refresh
