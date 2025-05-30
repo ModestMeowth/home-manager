@@ -11,6 +11,7 @@
     otter.enable = true;
     persistence.enable = true;
     render-markdown.enable = true;
+    tiny-inline-diagnostic.enable = true;
     todo-comments.enable = true;
     trouble.enable = true;
     web-devicons.enable = true;

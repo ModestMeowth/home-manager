@@ -8,11 +8,6 @@
       dracula-nvim.enable = true;
     };
 
-    diagnostic.settings = {
-      virtual_lines.current_line = false;
-      virtual_text = false;
-    };
-
     globals.mapleader = " ";
     luaLoader.enable = true;
 
@@ -42,7 +37,7 @@
       incsearch = true;
 
       undofile = true;
-      undodir.__raw = ''vim.fn.stdpath("data") .. "/undodir"'';
+      undodir.__raw = /*lua*/ ''vim.fn.stdpath("data") .. "/undodir"'';
     };
   };
 }
