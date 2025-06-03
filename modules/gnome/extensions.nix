@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs.gnomeExtensions; [
+    caffeine
     tiling-shell
     gsconnect
     no-overview
@@ -7,9 +8,10 @@
   ];
 
   dconf.settings."org/gnome/shell".enabled-extensions = [
-    "tilingshell@ferrarodomenico.com"
+    "caffeine@patapon.info"
     "gsconnect@andyholmes.github.io"
     "no-overview@fthx"
+    "tilingshell@ferrarodomenico.com"
     "user-theme@gnome-shell-extensions.gcampax.github.com"
   ];
 
