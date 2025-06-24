@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     bitwarden-cli
     bitwarden-desktop
-    signal-desktop
+    signal-desktop-bin
     virt-manager
     xdg-utils
   ];
