@@ -14,6 +14,9 @@
       dcu = "docker compose up -d";
       dls = "docker compose ls";
       dps = "docker compose ps";
+
+      hau = "virsh -c qemu:///system start home-assistant";
+      had = "virsh -c qemu:///system destroy home-assistant";
     };
   };
 }
