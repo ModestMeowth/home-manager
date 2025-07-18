@@ -1,5 +1,5 @@
 {
-  programs.zellij.enableFishIntegration = true;
+  #  programs.zellij.enableFishIntegration = true;
 
   xdg.configFile = {
     "zellij/config.kdl".text = # kdl

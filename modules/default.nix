@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./aliases.nix
+    ./btop
     ./chromium.nix
     ./editorconfig.nix
     ./firefox.nix

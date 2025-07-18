@@ -23,13 +23,13 @@
       ci = "zi";
     } // config.home.shellAliases;
 
-    shellInit = # fish
-      ''
-        if not string match -qi "vscode" $TERM_PROGRAM
-          set ZELLIJ_AUTO_ATTACH true
-          set ZELLIJ_AUTO_EXIT true
-        end
-      '';
+    # shellInit = # fish
+    #   ''
+    #     if not string match -qi "vscode" $TERM_PROGRAM
+    #       set ZELLIJ_AUTO_ATTACH true
+    #       set ZELLIJ_AUTO_EXIT true
+    #     end
+    #   '';
 
     interactiveShellInit = lib.mkBefore # fish
       ''

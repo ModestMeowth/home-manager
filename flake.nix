@@ -47,7 +47,7 @@
           modules = with inputs; [
             nixvim.homeManagerModules.nixvim
             ./modules
-            ./hosts/${hostname}.nix
+            ./hosts/${hostname}
           ] ++ additionalModules;
         };
     in
@@ -55,7 +55,7 @@
       homeConfigurations."mm@rocinante" = mkHome {
         hostname = "rocinante";
         additionalModules = [
-          ./modules/gnome
+          ./modules/hyprland
         ];
       };
 
