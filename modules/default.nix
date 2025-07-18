@@ -32,6 +32,10 @@
     ripgrep
   ];
 
+  home.sessionVariables = {
+    JUST_UNSTABLE = "true"; # currently needed to use [script] tag, which fixes scripts on WSL due to noexec on $XDG_RUNTIME_DIR
+  };
+
   home.file."justfile".enable = true;
   home.file."justfile".text = # justfile
     ''
