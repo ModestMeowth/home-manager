@@ -16,6 +16,13 @@
   ];
 
   home.packages = with pkgs; [
+    blueberry
+    brightnessctl
+    hyprpicker
+    hyprshot
+    playerctl
+    pwvucontrol
+    unstable.wiremix
     wl-clip-persist
   ];
 

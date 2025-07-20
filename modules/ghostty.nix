@@ -7,7 +7,8 @@
     installBatSyntax = true;
 
     settings = {
-      font-family = "UbuntuMono Nerd Font";
+      font-family = "0xProto Nerd Font Mono";
+      font-size = 10;
       keybind = [
         "clear"
       ];

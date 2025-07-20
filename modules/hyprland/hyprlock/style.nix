@@ -1,6 +1,4 @@
 let
-  font = "Ubuntu Nerd Font Mono";
-
   black = "40, 42, 54"; #282a36
   gray = "68, 71, 90"; #44475a
   green = "80, 250, 123"; #50fa7b
@@ -15,7 +13,7 @@ in {
       inner_color = "rgba(${black}, 0.8)";
       outer_color = "rgba(${purple}, 1)";
 
-      font_family = font;
+      font_family = "0xProto Nerd Font Mono";
       font_color = "rgba(${green}, 1)";
       placeholder_color = "rgba(${white} 1)";
       check_color = "rgba(${gray}, 1)"; # 44475a

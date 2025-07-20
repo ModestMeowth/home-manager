@@ -1,9 +1,3 @@
-let
-  gtkTheme = "Dracula";
-  terminal = "ghostty";
-  btUtil = "blueberry";
-  volUtil = "pwvucontrol";
-in
 {
   programs.waybar.settings = {
     mainBar = {
@@ -16,38 +10,11 @@ in
       modules-center = [ "clock" ];
       modules-right = [
         "tray"
-        "gamemode"
-        "power-profiles-daemon"
         "bluetooth"
         "network"
         "wireplumber"
         "battery"
       ];
-
-      gamemode = {
-        format = "{glyph}";
-        format-alt = "{glyph} {count}";
-        glyph = "";
-        hide-not-running = true;
-        use-icon = true;
-        icon-name = "input-gaming-symbolic";
-        icon-spacing = 4;
-        icon-size = 20;
-        tooltip = true;
-        tooltip-format = "Games running: {count}";
-      };
-
-      power-profiles-daemon = {
-        format = "{icon}";
-        tooltip-format = "Power profile: {profile}\nDriver: {driver}";
-        tooltip = true;
-        format-icons = {
-          default = "";
-          performance = "";
-          balanced = "";
-          power-saver = "";
-        };
-      };
 
       "hyprland/workspaces" = {
         "on-click" = "activate";
@@ -98,7 +65,7 @@ in
         tooltip-format-disconnected = "Disconnected";
         interval = 3;
         nospacing = 1;
-        on-click = "${terminal} -e nmtui";
+        on-click = "hyprctl dispatch -- togglespecialworkspace networkManager";
       };
 
       battery = {
@@ -148,7 +115,7 @@ in
         format-disabled = "󰂲";
         format-connected = "";
         tooltip-format = "Devices connected: {num_connections}";
-        on-click = "GTK_THEME=${gtkTheme} ${btUtil}";
+        on-click = "hyprctl dispatch -- togglespecialworkspace bluetooth";
       };
 
       wireplumber = {
@@ -160,7 +127,8 @@ in
           ""
         ];
         scroll-step = 5;
-        on-click = "GTK_THEME=${gtkTheme} ${volUtil}";
+        on-click = "hyprctl dispatch -- togglespecialworkspace volume";
+        on-click-right = "hyprctl dispatch -- togglespecialworkspace mixer";
         tooltip-format = "Playing at {volume}%";
       };
 

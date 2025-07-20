@@ -6,6 +6,7 @@
     bitwarden-desktop
     unstable.bootdev-cli
     devenv
+    fontpreview
     signal-desktop-bin
     treefmt
     virt-manager
@@ -62,9 +63,9 @@
   };
 
   wayland.windowManager.hyprland.settings.exec-once = [
-    "gsettings set org.gnome.desktop.interface cursor-theme '${config.home.pointerCursor.name}'"
-    "gsettings set org.gnome.desktop.interface cursor-size '${builtins.toString config.home.pointerCursor.size}'"
-    "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+    "dconf write /org/gnome/desktop/interface/cursor-theme '${config.home.pointerCursor.name}'"
+    "dconf write /org/gnome/desktop/interface/cursor-size '${builtins.toString config.home.pointerCursor.size}'"
+    "dconf write /org/gnome/desktop/interface/color-scheme 'prefer-dark'"
   ];
 
   qt = {
@@ -84,8 +85,8 @@
     };
 
     font = {
-      name = "Ubuntu Nerd Font";
-      package = pkgs.nerd-fonts.ubuntu;
+      name = "0xProto Nerd Font Propo";
+      size = 10;
     };
   };
 }

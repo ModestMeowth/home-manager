@@ -19,7 +19,7 @@ in
         border: none;
         border-radius: 0;
         min-height: 0;
-        font-family: Ubuntu Nerd Font Mono;
+        font-family: "0xProto Nerd Font Mono";
         font-size: 14px;
       }
 
