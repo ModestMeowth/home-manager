@@ -1,4 +1,6 @@
-{
+{config, ...}: let
+  fonts = config.stylix.fonts;
+in {
   programs.ghostty = {
     enableBashIntegration = true;
     enableFishIntegration = true;
@@ -7,7 +9,7 @@
     installBatSyntax = true;
 
     settings = {
-      font-family = "0xProto Nerd Font Mono";
+      font-family = fonts.monospace.name;
       font-size = 10;
       keybind = [
         "clear"

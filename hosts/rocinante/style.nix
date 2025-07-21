@@ -30,8 +30,8 @@
     };
 
     fonts = {
-      serif.name = "0xProto Nerd Font Propo";
       monospace.name = "0xProto Nerd Font Mono";
+      serif.name = "0xProto Nerd Font Propo";
     };
 
     targets = {

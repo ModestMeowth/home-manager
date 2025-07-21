@@ -9,7 +9,7 @@ in
         border: none;
         border-radius: 0;
         min-height: 0;
-        font-family: "0xProto Nerd Font Mono";
+        font-family: "${fonts.serif.name}";
         font-size: 14px;
       }
 
