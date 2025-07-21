@@ -1,16 +1,5 @@
-let
-  background-darker = "rgba(30, 31, 41, 230)";
-  background = "#282a36";
-  selection = "#44475a";
-  foreground = "#f8f8f2";
-  comment = "#6272a4";
-  cyan = "#8be9fd";
-  green = "#50fa7b";
-  orange = "#ffb86c";
-  pink = "#ff79c6";
-  purple = "#bd93f9";
-  red = "#ff5555";
-  yellow = "#f1fa8c";
+{ config, ... }: let
+  theme = config.lib.stylix.colors;
 in
 {
   programs.waybar.style = # CSS
@@ -25,9 +14,9 @@ in
 
       window#waybar {
         opacity: 0.9;
-        background: ${background-darker};
-        color: ${foreground};
-        border-bottom: 2px solid ${background};
+        theme.base01: ${theme.base00};
+        color: ${theme.base05};
+        border-bottom: 2px solid ${theme.base01};
       }
 
       #workspaces {
@@ -38,26 +27,26 @@ in
         all: initial;
         padding: 2px 6px;
         margin-right: 3px;
-        background: ${background};
-        color: ${foreground};
+        theme.base01: ${theme.base01};
+        color: ${theme.base05};
       }
 
       #workspaces button:hover {
         box-shadow: inherit;
         text-shadow: inherit;
-        background-image: linear-gradient(0deg, ${selection}, ${background-darker});
+        theme.base01-image: linear-gradient(0deg, ${theme.base02}, ${theme.base00});
       }
 
       #workspaces button:active {
-        background-image: linear-gradient(0deg, ${purple}, ${background-darker});
+        theme.base01-image: linear-gradient(0deg, ${theme.base0F}, ${theme.base00});
       }
 
       #workspaces button.urgent {
-        background-image: linear-gradient(0deg, ${red}, ${background-darker});
+        theme.base01-image: linear-gradient(0deg, ${theme.base08}, ${theme.base00});
       }
 
       #taskbar button.active {
-        background-image: linear-gradient(0deg, ${selection}, ${background-darker});
+        theme.base01-image: linear-gradient(0deg, ${theme.base02}, ${theme.base00});
       }
 
       #battery,

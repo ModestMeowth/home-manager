@@ -1,5 +1,8 @@
-{ config, pkgs, ... }: {
-  dconf.settings."org/gnome/desktop/applications/terminal".exec = "ghostty";
+{ pkgs, ... }: {
+
+  imports = [
+    ./style.nix
+  ];
 
   home.packages = with pkgs; [
     bitwarden-cli
@@ -35,58 +38,8 @@
     ];
   };
 
-  xdg.cacheFile."background/nebula.jpeg" = {
-    source = ./background.jpeg;
-  };
-
   services = {
     syncthing.enable = true;
-  };
-
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      ipc = "on";
-      splash = false;
-      preload = "${config.home.homeDirectory}/.cache/background/nebula.jpeg";
-      wallpaper = "eDP-1,${config.home.homeDirectory}/.cache/background/nebula.jpeg";
-    };
-  };
-
-  home.pointerCursor = {
-    name = "Adwaita";
-    package = pkgs.adwaita-icon-theme;
-    size = 24;
-    gtk.enable = true;
-    hyprcursor.enable = true;
-    hyprcursor.size = config.home.pointerCursor.size;
-  };
-
-  wayland.windowManager.hyprland.settings.exec-once = [
-    "dconf write /org/gnome/desktop/interface/cursor-theme '${config.home.pointerCursor.name}'"
-    "dconf write /org/gnome/desktop/interface/cursor-size '${builtins.toString config.home.pointerCursor.size}'"
-    "dconf write /org/gnome/desktop/interface/color-scheme 'prefer-dark'"
-  ];
-
-  qt = {
-    enable = true;
-    style.name = "adwaita-dark";
-  };
-
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Dracula";
-      package = pkgs.dracula-theme;
-    };
-    iconTheme = {
-      name = "Dracula";
-      package = pkgs.dracula-icon-theme;
-    };
-
-    font = {
-      name = "0xProto Nerd Font Propo";
-      size = 10;
-    };
+    hyprpaper.enable = true;
   };
 }

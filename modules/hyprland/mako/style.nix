@@ -1,12 +1,15 @@
-{
+{ config, ... }: let
+  theme = config.lib.stylix.colors;
+  fonts = config.stylix.fonts;
+in {
   services.mako.settings = {
-    background-color = "#282a36";
-    text-color = "#f8f8f2";
+    background-color = "#${theme.base00}";
+    text-color = "#${theme.base05}";
 
-    font = "0xProto Nerd Font Proto";
+    font = fonts.serif.name;
 
-    "urgency=low".border-color = "#bd93f9";
-    "urgency=normal".border-color = "#50fa7b";
-    "urgency=high".border-color = "#ff5555";
+    "urgency=low".border-color = "#${theme.base0F}";
+    "urgency=normal".border-color = "#${theme.base0B}";
+    "urgency=high".border-color = "#${theme.base08}";
   };
 }

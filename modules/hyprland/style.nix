@@ -1,21 +1,23 @@
-{
+{ config, ... }: let
+  theme = config.lib.stylix.colors;
+in {
   wayland.windowManager.hyprland.settings = {
     general = {
-      "col.active_border" = "rgb(44475a) rgb(bd93f9) 90deg";
-      "col.inactive_border" = "rgba(44475aaa)";
-      "col.nogroup_border" = "rgba(282a36dd)";
-      "col.nogroup_border_active" = "rgb(bd93f9) rgb(44475a) 90deg";
+      "col.active_border" = "rgb(${theme.base02}) rgb(${theme.base0F}) 90deg";
+      "col.inactive_border" = "rgba(${theme.base02}aa)";
+      "col.nogroup_border" = "rgba(${theme.base00}dd)";
+      "col.nogroup_border_active" = "rgb(${theme.base0F}) rgb(${theme.base02}) 90deg";
     };
 
-    decoration.shadow.color = "rgba(1e202966)";
+    decoration.shadow.color = "rgba(${theme.base00}66)";
 
     group.groupbar = {
-      "col.active" = "rgb(bd93f9) rgb(44475a) 90deg";
-      "col.inactive" = "rgba(282a36dd)";
+      "col.active" = "rgb(${theme.base0F}) rgb(${theme.base02}) 90deg";
+      "col.inactive" = "rgba(${theme.base00}dd)";
     };
 
     windowrulev2 = [
-      "bordercolor rgb(ff5555),xwayland:1"
+      "bordercolor rgb(${theme.base08}),xwayland:1"
     ];
   };
 }

@@ -1,11 +1,12 @@
 { pkgs, ... }: {
   imports = [
+    ./settings.nix
+    ./style.nix
+
     ./autostart.nix
     ./bindings.nix
     ./envs.nix
     ./input.nix
-    ./appearance.nix
-    ./style.nix
     ./windows.nix
 
     ./hypridle.nix
