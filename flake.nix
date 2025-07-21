@@ -14,14 +14,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-    };
-
     stylix = {
       url = "github:nix-community/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+    };
+
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:

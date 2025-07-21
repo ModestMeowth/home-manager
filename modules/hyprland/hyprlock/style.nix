@@ -3,17 +3,17 @@
   fonts = config.stylix.fonts;
 in {
   programs.hyprlock.settings = {
-    background.color = "rgba(${theme.base00}, 1.0)";
+    background.color = "rgb(${theme.base00})";
 
     input-field = {
-      inner_color = "rgba(${theme.base00}, 0.8)";
-      outer_color = "rgba(${theme.base0F}, 1)";
+      inner_color = "rgba(${theme.base00}cc)";
+      outer_color = "rgb(${theme.base0F})";
 
       font_family = fonts.monospace.name;
-      font_color = "rgba(${theme.base0B}, 1)";
-      placeholder_color = "rgba(${theme.base05} 1)";
-      check_color = "rgba(${theme.base02}, 1)"; # 44475a
-      fail_color = "rgba(${theme.base08}, 1)";
+      font_color = "rgb(${theme.base0B})";
+      placeholder_color = "rgb(${theme.base05})";
+      check_color = "rgb(${theme.base02}";
+      fail_color = "rgb(${theme.base08})";
     };
   };
 }
